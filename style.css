@@ -81,6 +81,9 @@ section ul li.active{
 	margin: 5px;
 	display: block;
 }
+.product .itemBox.hide{
+	display: none;
+}
 .product .itemBox img{
 	position: absolute;
 	top: 0;

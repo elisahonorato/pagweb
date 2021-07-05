@@ -41,3 +41,25 @@ fetch("https://sheet.best/api/sheets/2d65936f-37f4-496f-b66e-c79975148520")
 .catch((err) => {
     console.log("Pucha, algo falló", err);
 });
+       let list= document.querySelectorAll('.list');
+              let itemBox= document.querySelectorAll('.itemBox');
+
+              for(let i= 0; i<list.length; i++){
+               list[i].addEventListener('click',function(){
+                  for (let j= 0; j<list.length; j++){
+                     list[j].classList.remove('active');
+                  }
+               this.classList.add('active');
+               
+               let dataFilter = this.getAttribute('data-Filter');
+               for (let k= 0; k<itemBox.length; k++){
+                     itemBox[k].classList.remove('active');
+                     itemBox[k].classList.add('hide');
+
+                if(itemBox[k].getAttribute('data-item') ==dataFilter || dataFilter== "all"){
+                itemBox[k].classList.remove('hide');
+                itemBox[k].classList.add('active');
+            }
+                  }
+               })
+              }
