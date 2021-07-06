@@ -16,9 +16,10 @@ Papa.parse('csv_elisa', {
             products.innerHTML += `
                 <a href="proyecto.html?nro=${number}">
                     <div class="itemBox" data-item="graphic">
-                        <img src="${image}" >
+                        <img src="${image}" >+</h4><img src="images/'
                     </div>
                 </a>`
+
         })
     }
 })
