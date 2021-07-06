@@ -32,7 +32,7 @@ for (let i = 0; i < list.length; i++) {
 
 function transition(event)   {
     console.log(event);
-    document.getElementsByTagName("body")[0].style.background = "#117C60";
+    document.getElementsByTagName("body")[0].style.background = "#000000";
 
 }
 $('div.itemBox').mouseover(transition);
@@ -42,7 +42,7 @@ function nada() {
 }
 $('div.itemBox').mouseleave(nada);
 
-Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/pag%20web.xlsx%20-%20Hoja%201.csv', {
+Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/pag%20web.xlsx%20-%20Hoja%201.csvfoto', {
     download: true,
     header: true,
     dynamicTyping: true,

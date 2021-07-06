@@ -1,45 +1,39 @@
-
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Rubik:wght@400;500&display=swap');
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inconsolata', monospace;
-  font-size: 2.5vh;
-  color: black;
-  box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Inconsolata', monospace;
+font-size: 2.5vh;
+color: black;
+box-sizing: border-box;
 }
 header{
-	font-family: 'Rubik', sans-serif;
-    font-size: 5vh;
-	color: gray;
+font-family: 'Rubik', sans-serif;
+font-size: 5vh;
+color: gray;
 }
 *{
-	transition:all ease 0.5s;
+transition:all ease 0.5s;
 }
-
 :hover{
-	transition:all ease 0.5s;
+transition:all ease 0.5s;
 }
-
 .navbar-light .navbar-nav .nav-link {
-    color: rgba(0,0,0,100.0);
-    font-family: 'Inconsolata', monospace;
-    font-size: 3vh;
-	color: gray;
-	margin: auto;
+color: rgba(0,0,0,100.0);
+font-family: 'Inconsolata', monospace;
+font-size: 3vh;
+color: gray;
+margin: auto;
 }
-
 section header{
-	height:auto;
-	min-height: 100vh;
+height:auto;
+min-height: 100vh;
 }
-
 section#hello header{
-	background:silver url("images/elisa.gif") center left no-repeat;
-	background-size:cover;
+background:silver url("images/elisa.gif") center left no-repeat;
+background-size:cover;
 }
-
 section#work{
 padding: 100px;
 width: 100%;
@@ -50,99 +44,104 @@ flex-direction: column;
 margin:40px auto;
 }
 section ul{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	margin-bottom: 20px;
-
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+margin-bottom: 20px;
 }
 section ul li{
-	list-style: none;
-	background: #eee;
-	padding: 24px 40px
-	letter-spacing: 1px;
-	cursor: pointer;
-    margin: 10px 2em 1%;
+list-style: none;
+background: #eee;
+padding: 24px 40px
+letter-spacing: 1px;
+cursor: pointer;
+margin: 10px 2em 1%;
 }
 section ul li.active{
-	background: #000;
-	color: #fff;
+background: #000;
+color: #fff;
 }
 .product{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
 }
 .product .itemBox{
-	position: relative;
-	width: 200px;
-	height: 200px;
-	margin: 5px;
-	display: block;
+position: relative;
+width: 200px;
+height: 200px;
+margin: 5px;
+display: block;
 }
 .product .itemBox.hide{
-	display: none;
+display: none;
+}
+.product .itemBox.active{
+	animation: animate 0.4s ease;
+
+}
+@keyframes animate{
+	0%{
+		transform: scale(0.5);
+	}
+	100%{
+		transform: scale(1);
+	}
 }
 .product .itemBox img{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 section#contact header{
-	background:silver url("images/graphic31.jpg") center center no-repeat;
-	background-size:cover;	
+background:silver url("images/graphic31.jpg") center center no-repeat;
+background-size:cover;	
 }
-
 :target:before {
-	content:"";
-	display:block;
-	height:70px;
-	margin:-70px 0 0;
-
+content:"";
+display:block;
+height:70px;
+margin:-70px 0 0;
 }
+
+
 /* Proyectos */
 main section#proyectos{
-    float:left;
-    margin:3% 1% 10% 1%;
-    width:98%;   
+float:left;
+margin:4% 10% 4% 10%;
+width:80%;   
 }
-
 main section#proyectos h1{
-    font-size:calc(1.5rem + 1vw);
-    line-height: 1;
-    font-family: 'Rubik', sans-serif;
+font-size:calc(1.2rem + 1vw);
+line-height: 1;
+font-family: 'Rubik', sans-serif;
+}
+main section#proyectos h6{
+font-size:1.0rem;
+line-height: 1.3;
+margin:0% 10% 2% 0%;
+}
+main section#proyectos div.img{
+display: flex;
+flex-flow: row;
+object-fit: cover;
+display: flex;
+width: 80%;
+}
+main section#proyectos img{
+position: relative;
+width: 300px;
+height: auto;
+margin: 0px;
+display: block;
 
 }
-
-main section#proyectos h3{
-    font-size:1.3rem;
-    line-height: 2.5;
-}
-
-main section#proyectos h4{
-    font-size:1.2rem;
-    line-height: 2.5;
-}
-
- main section#proyectos img{
-    width: 200px;
-    height:auto;
-    margin:1.5rem 0;
-}
-
 main section#proyectos p{
-    max-width:100%;
-    line-height: 1.6;
-}
-
-@media screen and (orientation:landscape){
-    main section p{
-        max-width:75%;
-        line-height: 1.8;
-    }    
+margin:0% 0% 0% 0%;
+line-height: 1.3;
 }
