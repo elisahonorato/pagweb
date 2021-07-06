@@ -52,9 +52,9 @@
 
                     var n = new URLSearchParams(window.location.search).get('nro');
                     if (n !== null) {
-                        document.querySelector('section').innerHTML = '<h1>' + proyectos[n].name  + ' </h4><img src="' + proyectos[n].pic_lg + '"><p>' + proyectos[n].description;
+                        document.querySelector('section').innerHTML = '<h1>' + proyectos[n].name  + '<h6>' +  proyectos[n].description + '</h1><h4>' + ' </h4><img src="' + proyectos[n].pic_lg + '"><p>'+ '</h1><h4>' + ' </h4><img src="' + proyectos[n].pic_lg;
 
-                    } 
+                    }
             }
         });
         </script>
