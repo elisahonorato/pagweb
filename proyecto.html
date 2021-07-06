@@ -36,10 +36,26 @@
       </nav>
             <main>
                 <section id='proyectos'>
-                    <!--acá se meten las películas-->
+                 <div class="img"></div>
                 </section>
             </main>
     </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" integrity="sha512-rKFvwjvE4liWPlFnvH4ZhRDfNZ9FOpdkD/BU5gAIA3VS3vOQrQ5BjKgbO3kxebKhHdHcNUHLqxQYSoxee9UwgA==" crossorigin="anonymous"></script>
-    <script src="proyecto.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" integrity="sha512-rKFvwjvE4liWPlFnvH4ZhRDfNZ9FOpdkD/BU5gAIA3VS3vOQrQ5BjKgbO3kxebKhHdHcNUHLqxQYSoxee9UwgA==" crossorigin="anonymous"></script>
+        <script>
+            Papa.parse("https://raw.githubusercontent.com/elisahonorato/pagweb/main/pag%20web.xlsx%20-%20Hoja%201.csv", {
+                download: true,
+                header: true,
+                dynamicTyping: true,
+                complete: function (respuesta) {
+                    var proyectos = respuesta.data;
+                    console.log(proyectos);
+
+                    var n = new URLSearchParams(window.location.search).get('nro');
+                    if (n !== null) {
+                        document.querySelector('section').innerHTML = '<h1>' + proyectos[n].name  + ' </h4><img src="' + proyectos[n].pic_lg + '"><p>' + proyectos[n].description;
+
+                    } 
+            }
+        });
+        </script>
 </html>

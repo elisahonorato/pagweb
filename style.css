@@ -105,4 +105,42 @@ section#contact header{
 	margin:-70px 0 0;
 
 }
+/* Proyectos */
+main section#proyectos{
+    float:left;
+    margin:3% 1% 10% 1%;
+    width:98%;   
+}
 
+main section#proyectos h1{
+    font-size:calc(1.5rem + 1vw);
+    line-height: 1;
+}
+
+main section#proyectos h3{
+    font-size:1.3rem;
+    line-height: 2.5;
+}
+
+main section#proyectos h4{
+    font-size:1.2rem;
+    line-height: 2.5;
+}
+
+ main section#proyectos img{
+    width: 200px;
+    height:auto;
+    margin:1.5rem 0;
+}
+
+main section#proyectos p{
+    max-width:100%;
+    line-height: 1.6;
+}
+
+@media screen and (orientation:landscape){
+    main section p{
+        max-width:75%;
+        line-height: 1.8;
+    }    
+}
