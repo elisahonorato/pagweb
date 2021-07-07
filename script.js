@@ -44,7 +44,7 @@ Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/pag%20we
         myProjects.forEach(({ image, number }) => {
             products.innerHTML += `
                 <a href="proyecto.html?nro=${number}">
-                    <div class="itemBox" data-item="${type}">
+                    <div class="itemBox">
                         <img src="${image}" >
                     </div>
                 </a>`
