@@ -1,12 +1,4 @@
 
-//La API
-fetch("https://sheet.best/api/sheets/2d65936f-37f4-496f-b66e-c79975148520")
-    .then((response) => {
-        return response.json();
-    })
-    .catch((err) => {
-        console.log("Pucha, algo falló", err);
-    });
 let list = document.querySelectorAll('.list');
 let itemBox = document.querySelectorAll('.itemBox');
 
@@ -42,7 +34,7 @@ function nada() {
 }
 $('div.itemBox').mouseleave(nada);
 
-Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/pag%20web.xlsx%20-%20Hoja%201.csvfoto', {
+Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/pag%20web.xlsx%20-%20Hoja%201.csv', {
     download: true,
     header: true,
     dynamicTyping: true,
