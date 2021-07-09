@@ -140,22 +140,30 @@ font-size:1.0rem;
 line-height: 1.3;
 margin:0% 10% 2% 0%;
 }
-main section#proyectos div.img{
-display: flex;
-flex-flow: row;
-object-fit: cover;
-display: flex;
+main section#proyectos div{
+display: float;
+margin:0% 0% 0% 0%;
 width: 80%;
-}
-main section#proyectos img{
-position: relative;
-width: 300px;
-height: auto;
-margin: 0px;
-display: block;
 
 }
-main section#proyectos p{
-margin:0% 0% 0% 0%;
-line-height: 1.3;
+
+main section#proyectos div.img{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+width: 100%;
+
 }
+main section#proyectos div.div2{
+display: flex;
+flex-direction: column;
+width: 50%;
+
+}
+main section#proyectos div.div2 img{
+margin:4% 10% 4% 0%;
+
+	}
+

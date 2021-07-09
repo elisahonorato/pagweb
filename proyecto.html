@@ -36,6 +36,11 @@
       </nav>
             <main>
                 <section id='proyectos'>
+
+                  <div id="container">
+                        <div></div>
+                           <div></div>
+                  </div>
                 </section>
             </main>
     </body>
@@ -51,7 +56,7 @@
 
                     var n = new URLSearchParams(window.location.search).get('nro');
                     if (n !== null) {
-                        document.querySelector('section').innerHTML = '<div><h1>' + proyectos[n].name  + '<h6>' +  proyectos[n].description +'</div>'+ '<div class="img"></h1><h4>' + ' </h4><img src="' + proyectos[n].pic_lg + '"><p>' + '</h1><h4>'+ ' </h4><img src="' + proyectos[n].pic1 + '"><p>'  + '</h1><h4>'+'"><p>'+'</div>'+ '<div class="img"></h1><h4>' + ' </h4><img src="' + proyectos[n].pic2 + '"><p>' + '</h1><h4>'+ ' </h4><img src="' + proyectos[n].pic3 + '"><p>'  + '</h1><h4>'+'"><p>'+'</div>';
+                        document.querySelector('section#proyectos').innerHTML = '<div><h1>' + proyectos[n].name  + '<h6>' +  proyectos[n].description +'</div>'+ '<div class="img">' + '<div class="div2"><img src="' + proyectos[n].pic_lg  + '"><img src="' + proyectos[n].pic1  + '"></div>'+ '<div class="div2"><img src="' + proyectos[n].pic2  + '"><img src="' + proyectos[n].pic3  +'"></div>'+'</div>';
 
                     }
             }
