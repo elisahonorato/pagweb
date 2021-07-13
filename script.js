@@ -18,7 +18,7 @@ Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/pag%20we
             products.innerHTML += `
                 <a href="proyecto.html?nro=${number}">
                     <div class="itemBox" data-item="${type}">
-                        <img src="${pic_lg}"  >
+                        <img src="${pic_lg}" alt=${type}">
                     </div>
                 </a>`
         })
