@@ -1,0 +1,2 @@
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHdXyojcQ5ILWiAnlpZVGhV7fWv6aLZeQEYRGnUtKPP4 elisahonoratolira@uc.cl
+ssh-keygen -t ed25519 -C elisahonoratolira@uc.cl
