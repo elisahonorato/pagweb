@@ -7,3 +7,8 @@ sp/QZKTQ4/DHBeIfUuQAjDRcbTgQ7SnN0yLSd36iRC99c+qvDCCMYUpvTymPx7Qbzev03q
 xbyuWYymJscxJnBM6JLC4aTOU/Bf23RNLrTa7ypCvmYOaymvvYV2YNJ/iczWkwmCyNZyd1
 fJPaln7p5gyz173ziH7eu7ADuZpJ0y0=
 -----END OPENSSH PRIVATE KEY-----
+$ dig elisahonoratolira +nostats +nocomments +nocmd
+    > www.elisahonoratolira.cl                     IN      A
+    > www.elisahonoratolira.cl              3592    IN      CNAME   elisahonorato.github.io.
+    > elisahonorato.github.io.      43192   IN      CNAME    GITHUB-PAGES-SERVER .
+    >  GITHUB-PAGES-SERVER .         22      IN      A       192.0.2.1
