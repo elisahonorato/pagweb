@@ -7,7 +7,7 @@ function nada() {
     document.getElementsByTagName("body")[0].style.background = "#fff";
 }
 
-Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/pag%20web.xlsx%20-%20Hoja%201.csv', {
+Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/assets/csv/pag%20web.xlsx%20-%20Hoja%201.csv', {
     download: true,
     header: true,
     dynamicTyping: true,
