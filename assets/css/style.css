@@ -13,9 +13,7 @@ font-family: 'Rubik', sans-serif;
 font-size: 5vh;
 color: gray;
 }
-*{
-transition:all ease 0.5s;
-}
+
 :hover{
 transition:all ease 0.5s;
 }
