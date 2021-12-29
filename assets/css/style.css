@@ -114,8 +114,7 @@ height: 100%;
 object-fit: cover;
 }
 section#contact header{
-background:silver url("../images/graphic31.jpg") center center no-repeat;
-background-size:cover;	
+background:silver url("../images/graphic31.jpg");
 
 }
 :target:before {
