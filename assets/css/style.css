@@ -273,7 +273,7 @@ section ul li.active {
 /* Makes the fades smooth with a slight delay to prevent jumps as the mouse moves between items */
 
 .product:hover>* {
-	transform: scale(0.8);
+	transform: scale(0.9);
 }
 
 /* Fade out all items when the parent is hovered */
