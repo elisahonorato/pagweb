@@ -1,11 +1,4 @@
-function transition(event)   {
-    document.getElementsByTagName("body")[0].style.background = "#000000";
 
-}
-
-function nada() {
-    document.getElementsByTagName("body")[0].style.background = "#fff";
-}
 
 Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/assets/csv/pag%20web.xlsx%20-%20Hoja%201.csv', {
     download: true,
@@ -22,8 +15,7 @@ Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/assets/c
                     </div>
                 </a>`
         })
-        $('div.itemBox').mouseover(transition);
-        $('div.itemBox').mouseleave(nada);
+       
     }
 })
 
