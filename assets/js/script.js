@@ -9,7 +9,7 @@ Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/assets/c
         var products = $('#projects')[0]
         myProjects.forEach(({pic_lg, type, number }) => {
             products.innerHTML += `
-                <a href="proyecto.html?nro=${number}">
+                <a href="proyecto.html=${number}">
                     <div class="itemBox" data-item="${type}">
                         <img src="${pic_lg}" alt=${type}">
                     </div>
