@@ -14,9 +14,7 @@ font-size: 5vh;
 color: gray;
 }
 
-:hover{
-transition:all ease 0.5s;
-}
+
 .navbar-light .navbar-nav .nav-link {
 color: rgba(0,0,0,100.0);
 font-family: 'Inconsolata', monospace;
