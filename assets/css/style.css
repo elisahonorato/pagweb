@@ -123,7 +123,9 @@ p {
   font-size: 14px;
   line-height: 20px;
 }
-
+a{
+	color: black;
+}
 
 header {
 	font-family: var(--bs-header-font-family);
