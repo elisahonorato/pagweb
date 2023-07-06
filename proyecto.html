@@ -44,37 +44,75 @@
    </nav>
    <main>
       <section id='proyectos'>
-         <div id="container">
-            <div></div>
-            <div></div>
+         <div class="container">
+            <div class="image-grid">
+               <!-- Photos will be dynamically generated here -->
+            </div>
          </div>
       </section>
    </main>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"
    integrity="sha512-rKFvwjvE4liWPlFnvH4ZhRDfNZ9FOpdkD/BU5gAIA3VS3vOQrQ5BjKgbO3kxebKhHdHcNUHLqxQYSoxee9UwgA=="
    crossorigin="anonymous"></script>
-<script>
-   Papa.parse(
-      'https://raw.githubusercontent.com/elisahonorato/pagweb/main/assets/csv/pag%20web.xlsx%20-%20Hoja%201.csv', {
-         download: true,
-         header: true,
-         dynamicTyping: true,
-         complete: function (respuesta) {
-            var proyectos = respuesta.data;
-            console.log(proyectos);
-
-            var n = new URLSearchParams(window.location.search).get('nro');
-            if (n !== null) {
-               document.querySelector('section#proyectos').innerHTML = '<div><h1>' + proyectos[n].name + '<h6>' +
-                  proyectos[n].description + '</div>' + '<div class="img">' + '<div class="div2"><img src="' +
-                  proyectos[n].pic_lg + '"><img src="' + proyectos[n].pic1 + '"></div>' +
-                  '<div class="div2"><img src="' + proyectos[n].pic2 + '"><img src="' + proyectos[n].pic3 +
-                  '"></div>' + '</div>';
-
+   <script>
+      Papa.parse(
+         'https://raw.githubusercontent.com/elisahonorato/pagweb/main/assets/csv/pag%20web.xlsx%20-%20Hoja%201.csv', {
+            download: true,
+            header: true,
+            dynamicTyping: true,
+            complete: function (respuesta) {
+               var proyectos = respuesta.data;
+               console.log(proyectos);
+   
+               var n = new URLSearchParams(window.location.search).get('nro');
+               if (n !== null) {
+                  var project = proyectos[n];
+                  var photos = [];
+   
+                  // Collect all available photo URLs into an array
+                  for (var key in project) {
+                     if (key.startsWith('pic') && project[key] !== 'assets/images/') {
+                        photos.push(project[key]);
+                     }
+                  }
+   
+                  var imageGrid = document.querySelector('.image-grid');
+                  imageGrid.innerHTML = '';
+   
+                  if (photos.length > 0) {
+                     // Generate the appropriate number of image elements
+                     photos.forEach(function (photoUrl) {
+                        checkImageExists(photoUrl, function (exists) {
+                           if (exists) {
+                              var img = document.createElement('img');
+                              img.src = photoUrl;
+                              imageGrid.appendChild(img);
+                           }
+                        });
+                     });
+                  } else {
+                     // Handle the case when no photos are available
+                     var noPhotosMsg = document.createElement('p');
+                     noPhotosMsg.textContent = 'No photos available';
+                     imageGrid.appendChild(noPhotosMsg);
+                  }
+               }
             }
-         }
-      });
-</script>
+         });
+   
+      function checkImageExists(url, callback) {
+         var img = new Image();
+         img.onload = function () {
+            callback(true);
+         };
+         img.onerror = function () {
+            callback(false);
+         };
+         img.src = url;
+      }
+   </script>
+   
+</body>
 
 </html>
