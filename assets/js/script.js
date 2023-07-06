@@ -1,58 +1,68 @@
-
-
-Papa.parse('https://raw.githubusercontent.com/elisahonorato/pagweb/main/assets/csv/pag%20web.xlsx%20-%20Hoja%201.csv', {
-    download: true,
-    header: true,
-    dynamicTyping: true,
-    complete: (respuesta) => {
-        const myProjects = respuesta.data;
-        var products = $('#projects')[0]
-        myProjects.forEach(({pic_lg, type, number }) => {
-            products.innerHTML += `
-                <a href="proyecto.html?nro=${number}">
-                    <div class="itemBox" data-item="${type}">
-                        <img src="${pic_lg}" alt=${type}">
-                    </div>
-                </a>`
-        })
-       
-    }
-})
-
-let list = document.querySelectorAll('.list');
-
-for (let i = 0; i < list.length; i++) {
-    list[i].addEventListener('click', function() {
-        let itemBox = document.querySelectorAll('.itemBox');
-        for (let j = 0; j < list.length; j++) {
-            list[j].classList.remove('active');
-        }
-        this.classList.add('active');
-
-        let dataFilter = this.getAttribute('data-Filter');
-        for (let k = 0; k < itemBox.length; k++) {
-            itemBox[k].classList.remove('active');
-            itemBox[k].classList.add('hide');
-            if (itemBox[k].getAttribute('data-item') == dataFilter || dataFilter == "all") {
-                itemBox[k].classList.remove('hide');
-                itemBox[k].classList.add('active');
-            }
-        }
-    })
-}
-
-
-//El scroll
-var secundario = document.getElementById("secundario").offsetHeight;
-window.addEventListener("scroll", (event) => {
-    let scroll = this.scrollY;
-    if (scroll > secundario + 10) {
-        document.getElementById("principal").classList.add("fixed-top");
+const parseCSV = async (url) => {
+    const response = await fetch(url);
+    const text = await response.text();
+    const result = Papa.parse(text, {
+      header: true,
+      dynamicTyping: true,
+    });
+    return result.data;
+  };
+  
+  const renderProjects = (projects) => {
+    const products = document.getElementById('projects');
+    products.innerHTML = projects
+      .map(({ pic_lg, type, number }) => `
+        <a href="proyecto.html?nro=${number}">
+          <div class="itemBox" data-item="${type}">
+            <img src="${pic_lg}" alt="${type}">
+          </div>
+        </a>
+      `)
+      .join('');
+  };
+  
+  const filterProjects = (filter) => {
+    const itemBox = document.querySelectorAll('.itemBox');
+    itemBox.forEach((box) => {
+      const dataItem = box.getAttribute('data-item');
+      if (filter === 'all' || filter === dataItem) {
+        box.classList.add('active');
+        box.classList.remove('hide');
+      } else {
+        box.classList.remove('active');
+        box.classList.add('hide');
+      }
+    });
+  };
+  
+  const handleFilterClick = (event) => {
+    const filter = event.target.getAttribute('data-filter');
+    const list = document.querySelectorAll('.list');
+    list.forEach((item) => item.classList.remove('active'));
+    event.target.classList.add('active');
+    filterProjects(filter);
+  };
+  
+  const handleScroll = () => {
+    const secundario = document.getElementById('secundario').offsetHeight;
+    const principal = document.getElementById('principal');
+    if (window.scrollY > secundario + 10) {
+      principal.classList.add('fixed-top');
     } else {
-        document.getElementById("principal").classList.remove("fixed-top");
+      principal.classList.remove('fixed-top');
     }
-});
-
-
-
+  };
+  
+  (async () => {
+    const data = await parseCSV('https://raw.githubusercontent.com/elisahonorato/pagweb/main/assets/csv/pag%20web.xlsx%20-%20Hoja%201.csv');
+    renderProjects(data);
+  
+    const list = document.querySelectorAll('.list');
+    list.forEach((item) => {
+      item.addEventListener('click', handleFilterClick);
+    });
+  
+    window.addEventListener('scroll', handleScroll);
+  })();
+  
 

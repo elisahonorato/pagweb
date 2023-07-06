@@ -349,38 +349,25 @@ main section#proyectos h6 {
 	margin: 0% 10% 2% 0%;
 }
 
-main section#proyectos div {
-	display: float;
-	margin: 0% 0% 0% 0%;
-	width: 80%;
 
-}
 
-main section#proyectos div.img {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
+
+.image-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 20px;
+	margin-top: 20px;
+ }
+
+ .image-grid img {
 	width: 100%;
+	height: auto;
+ }
 
-}
-
-main section#proyectos div.div2 {
-	display: flex;
-	flex-direction: column;
-	width: 50%;
-
-}
-
-main section#proyectos div.div2 img {
-	margin: 4% 10% 4% 0%;
-
-
-}
-
-main section#proyectos div.div2 img {
-	margin: 4% 10% 4% 0%;
-
-
-}
+ /* Media queries for responsiveness */
+ @media (max-width: 767px) {
+	.image-grid {
+	   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+	 }
+	 
